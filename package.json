@@ -1,0 +1,38 @@
+{
+  "name": "nba-fantasy-draft",
+  "version": "1.0.0",
+  "description": "Armá tu equipo ideal de la NBA filtrando jugadores por posición",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "start-manija": "tsx src/manija.ts",
+    "dev-manija": "tsx watch src/manija.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test-base": "vitest run tests/base.test.ts",
+    "test-manija": "vitest run tests/manija.test.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/node": "^22.10.7",
+    "@types/ws": "^8.5.13",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0",
+    "vitest": "^3.0.4"
+  },
+  "dependencies": {
+    "open": "^10.1.0",
+    "ws": "^8.18.0"
+  }
+}

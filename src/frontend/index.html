@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/nba.svg" alt="NBA" class="nba-logo" />
+      <h1>Armador de equipos</h1>
+    </header>
+
+    <main>
+      <section class="browser">
+        <h2>Jugadores disponibles</h2>
+        <div class="posicion-tabs">
+          <button class="tab activo" data-posicion="">Todos</button>
+          <button class="tab" data-posicion="G">G</button>
+          <button class="tab" data-posicion="F">F</button>
+          <button class="tab" data-posicion="C">C</button>
+        </div>
+        <div class="jugadores-grid" id="jugadoresGrid"></div>
+      </section>
+
+      <section class="roster">
+        <h2>Mi Equipo (<span id="rosterCount">0</span>/5)</h2>
+        <div class="roster-slots" id="rosterSlots"></div>
+      </section>
+    </main>
+
+    <script src="websocket.js"></script>
+    <script defer src="main.js"></script>
+  </body>
+</html>

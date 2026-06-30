@@ -1,0 +1,41 @@
+name: GitHub Classroom Workflow
+
+on:
+  - workflow_dispatch
+  - repository_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    name: Autograding
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: '[TODO: Exercise name]'
+        id: ejercicio
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: '[TODO: Exercise name]'
+          command: npm run test-base
+          timeout: '1'
+          max-score: '1'
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          EJERCICIO_RESULTS: '${{steps.ejercicio.outputs.result}}'
+        with:
+          runners: ejercicio
