@@ -5,20 +5,21 @@ const ids: number[] = cargarJugadores();
 let roster: number[] = [];
 
 export function estaEnRoster(roster: number[], id: number): boolean {
-  let esta: boolean = false;  
-  for (let i: number = 0; i < roster.length; i++){
-if (id === roster[i]){
-  esta = true
-}
-else{
-  esta = false
-}
+  let esta: boolean = false;
+  for (let i: number = 0; i < roster.length; i++) {
+    if (id === roster[i]) {
+      esta = true;
+    } else {
+      esta = false;
+    }
   }
   return esta;
 }
 
 export function agregarAlRoster(roster: number[], id: number): number[] {
-  let nuevoRoster: number[] = []; // COMPLETAR
+  let nuevoRoster: number[] = [];
+  nuevoRoster = roster;
+  nuevoRoster.push(id);
   return nuevoRoster;
 }
 
