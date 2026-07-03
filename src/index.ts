@@ -24,7 +24,12 @@ export function agregarAlRoster(roster: number[], id: number): number[] {
 }
 
 export function quitarDelRoster(roster: number[], id: number): number[] {
-  let nuevoRoster: number[] = []; // COMPLETAR
+  let nuevoRoster: number[] = [];
+  for (let i: number = 0; i < roster.length; i++) {
+    if (roster[i] !== id) {
+      nuevoRoster.push(roster[i]);
+    }
+  }
   return nuevoRoster;
 }
 
